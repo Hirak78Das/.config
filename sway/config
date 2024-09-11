@@ -7,6 +7,11 @@
 # to remove the title bars from all windows
 default_border none
 
+# for full screenshot
+bindsym Print exec grim ~/Pictures/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png
+# To capture a specific area of the screen:
+bindsym Shift+Print exec grim -g "$(slurp)" ~/Pictures/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png
+
 #font
 font pango:Fira code 14
 # waybar
