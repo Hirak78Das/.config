@@ -11,8 +11,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Set leader key
-vim.g.mapleader = " "  -- Set space as the leader key
 
 require("lazy").setup({
     -- "folke/tokyonight.nvim",
@@ -27,6 +25,7 @@ require("lazy").setup({
                 ensure_installed = { "java", "lua", "bash", "python" },  -- Add your languages here
                 highlight = {
                     enable = true,  -- Enable syntax highlighting
+
                 },
                 indent = {
                     enable = true,  -- Enable Treesitter-based indentation
@@ -34,6 +33,14 @@ require("lazy").setup({
             }
         end,
     },
+
+    --  plugin: nvim-autopairs
+  {
+    'windwp/nvim-autopairs',
+    config = function()
+      require('nvim-autopairs').setup{}
+    end
+  },
 
     -- Telescope Plugin
     {
@@ -55,6 +62,7 @@ require("lazy").setup({
             vim.api.nvim_set_keymap('n', '<Leader>fg', ':Telescope live_grep<CR>', { noremap = true, silent = true })
             vim.api.nvim_set_keymap('n', '<Leader>fb', ':Telescope buffers<CR>', { noremap = true, silent = true })
             vim.api.nvim_set_keymap('n', '<Leader>fh', ':Telescope help_tags<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<Leader>gf', ':Telescope git_files<CR>', { noremap = true, silent = true })
         end,
     },
 
