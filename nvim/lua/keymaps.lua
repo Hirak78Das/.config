@@ -15,6 +15,9 @@ vim.keymap.set('n', '<C-j>', '<C-w>j', opts)
 vim.keymap.set('n', '<C-k>', '<C-w>k', opts)
 vim.keymap.set('n', '<C-l>', '<C-w>l', opts)
 
+-- Set leader key
+vim.g.mapleader = " "  -- Set space as the leader key
+
 -- Resize with arrows
 -- delta: 2 lines
 vim.keymap.set('n', '<C-Up>', ':resize -2<CR>', opts)
