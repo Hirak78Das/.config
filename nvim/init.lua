@@ -1,6 +1,6 @@
 require('options')  
 require('keymaps')
 require('plugins')
-require('colorscheme')
+-- require('colorscheme')  i use default terminal colorscheme
 require('lsp')
 
