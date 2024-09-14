@@ -11,6 +11,9 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Set leader key
+vim.g.mapleader = " "  -- Set space as the leader key
+
 require("lazy").setup({
     -- "folke/tokyonight.nvim",
     "tanvirtin/monokai.nvim",
@@ -31,6 +34,30 @@ require("lazy").setup({
             }
         end,
     },
+
+    -- Telescope Plugin
+    {
+        'nvim-telescope/telescope.nvim',
+        requires = { 'nvim-lua/plenary.nvim' },
+        config = function()
+            require('telescope').setup({
+                defaults = {
+                    -- Default configuration options
+                    layout_config = {
+                        horizontal = { mirror = false },
+                        vertical = { mirror = false },
+                    },
+                },
+            })
+            
+            -- Keybindings for Telescope
+            vim.api.nvim_set_keymap('n', '<Leader>ff', ':Telescope find_files<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<Leader>fg', ':Telescope live_grep<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<Leader>fb', ':Telescope buffers<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<Leader>fh', ':Telescope help_tags<CR>', { noremap = true, silent = true })
+        end,
+    },
+
 
     -- Vscode-like pictograms
 	{
