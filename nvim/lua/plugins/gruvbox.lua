@@ -1,9 +1,10 @@
 return {
-  { "folke/tokyonight.nvim" },
+  { "dracula/vim" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
+      colorscheme = "dracula",
     },
   },
 }
+
