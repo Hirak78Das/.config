@@ -24,9 +24,12 @@ exec waybar
     bindsym XF86AudioMute exec  pactl set-sink-mute @DEFAULT_SINK@ toggle 
 
     #use light to change brightness of display
-    exec  light -N 5
-    bindsym XF86MonBrightnessUp exec light -A 10
-    bindsym XF86MonBrightnessDown exec light -U 10
+    #exec  light -N 5
+    #bindsym XF86MonBrightnessUp exec light -A 10
+    #bindsym XF86MonBrightnessDown exec light -U 10
+    bindsym XF86MonBrightnessUp exec brightnessctl -d amdgpu_bl1 set +5%    # Increase brightness by 5%
+    bindsym XF86MonBrightnessDown exec brightnessctl -d amdgpu_bl1 set 5%-  # Decrease brightness by 5%
+
 
 ### Variables
 #
@@ -39,7 +42,7 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $term gnome-terminal
+set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -51,6 +54,9 @@ include /etc/sway/config-vars.d/*
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg ~/backup-files/Wallpapers/wallhaven-2.jpg fill
+exec_always swaybg -i ~/Documents/nice-blue-background(1).jpg -m fill
+
+
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
