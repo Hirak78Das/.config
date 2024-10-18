@@ -14,7 +14,7 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     opts = {
-      lang = "c",
+      lang = "java",
       plugins = {
         non_standalone = true,
       },
