@@ -53,7 +53,7 @@ include /etc/sway/config-vars.d/*
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/backup-files/Wallpapers/wallhaven-2.jpg fill
+output * bg ~/backup-files/Wallpapers/wallhaven-1.jpg fill
 exec_always swaybg -i ~/Documents/nice-blue-background(1).jpg -m fill
 
 
