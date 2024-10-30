@@ -1,4 +1,4 @@
-oh-my-posh init fish --config $HOME/.poshthemes/avit.omp.json | source
+oh-my-posh init fish --config $HOME/.poshthemes/amro.omp.json | source
 set -g fish_greeting ""
 
 # Set global paths
