@@ -72,6 +72,7 @@ window#waybar.hidden {
 #network,
 #cpu,
 #custom-pomodoro,
+#bluetooth,
 #tray,
 #memory,
 #battery,
@@ -88,6 +89,17 @@ window#waybar.hidden {
 #custom-sep {
   padding: 0px;
   color: #585b70;
+}
+
+#bluetooth {
+  color: #74c7ec;
+  /*#6c71c4*/
+  ;
+  background-color: #11111b;
+}
+
+#bluetooth.on {
+  color: #FF0000;
 }
 
 #custom-pomodoro {
