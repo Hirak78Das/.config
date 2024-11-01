@@ -7,6 +7,15 @@
 # to remove the title bars from all windows
 default_border none
 
+titlebar_border_thickness 0                                                    
+titlebar_padding 0
+
+#hide_edge_borders smart
+
+# add border for windows
+for_window [app_id=".*"] border pixel 1
+client.focused #3b4252 #88c0d0 #3b4252 #88c0d0
+
 # for full screenshot
 bindsym Print exec grim ~/Pictures/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png
 # To capture a specific area of the screen:
@@ -53,8 +62,7 @@ include /etc/sway/config-vars.d/*
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/backup-files/Wallpapers/wallhaven-1.jpg fill
-exec_always swaybg -i ~/Documents/nice-blue-background(1).jpg -m fill
+output * bg ~/backup-files/Wallpapers/alena-aenami-stardust-1k.jpg fill
 
 
 # Example configuration:
