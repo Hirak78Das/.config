@@ -7,6 +7,8 @@ return {
         "stylua",
         "selene",
         "luacheck",
+        "jdtls",
+        "clangd",
         "shellcheck",
         "shfmt",
         "tailwindcss-language-server",
@@ -144,6 +146,7 @@ return {
       table.insert(opts.sources, { name = "emoji" })
     end,
   },
+
   {
     "neovim/nvim-lspconfig",
     opts = function()
