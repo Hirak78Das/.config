@@ -1,5 +1,5 @@
 /*https://github.com/brunoanesio/waybar-config/tree/main?tab=readme-ov-file*/
-@import 'waybarColors.css';
+@import "waybarColors.css";
 
 * {
   min-height: 0;
@@ -8,13 +8,12 @@
   font-weight: 600;
 }
 
-
 window#waybar {
   transition-property: background-color;
   transition-duration: 0.5s;
   /* background-color: #1e1e2e; */
   /* background-color: #181825; */
-  background-color: #11111b;
+  background-color: transparent;
 }
 
 window#waybar.hidden {
@@ -55,7 +54,7 @@ window#waybar.hidden {
 #workspaces button.focused {
   color: #11111b;
   /*#1e1e2e;*/
-  background-color: #74c7ec;
+  background-color: #89b4fa;
   /*#89b4fa;*/
 }
 
@@ -93,27 +92,31 @@ window#waybar.hidden {
 
 #bluetooth {
   color: #74c7ec;
-  /*#6c71c4*/
-  ;
-  background-color: #11111b;
+  background-color: @background;
 }
 
 #bluetooth.on {
-  color: #FF0000;
+  color: #ff0000;
+  background-color: @background;
 }
 
 #custom-pomodoro {
-  color: #94e2d5;
-  background-color: #11111b;
+  color: @color15;
+  background-color: @background;
 }
 
 #custom-pomodoro.work {
-  color: #ff474c;
-  background-color: #11111b;
+  color: #74c7ec;
+  background-color: @background;
 }
 
 #custom-pomodoro.break {
   color: #d3b683;
+}
+
+#custom-pomodoro.pause {
+  color: #ff0000;
+  background-color: #11111b;
 }
 
 /*
@@ -133,7 +136,7 @@ window#waybar.hidden {
 }
 
 #custom-spotify.paused {
-  color: #9399b2;
+  color: #94e2d5;
 }
 */
 
@@ -144,35 +147,33 @@ window#waybar.empty #window {
 #network {
   color: #74c7ec;
   /*#6c71c4*/
-  ;
-  background-color: #11111b;
+  background-color: @background;
 }
-
 #network.disconnected {
-  color: #FF0000;
+  color: #ff0000;
 }
 
 #cpu {
-  color: #94e2d5;
+  color: @color15;
   /*#94e2d5;*/
-  background-color: #11111b;
+  background-color: @background;
 }
 
 #memory {
-  color: #94e2d5;
+  color: @color15;
   /*#cba6f7;*/
-  background-color: #11111b;
+  background-color: @background;
 }
 
 #clock {
-  color: #94e2d5;
-  /*#74c7ec;*/
-  background-color: #11111b;
+  color: @color15;
+  /*#cba6f7;*/
+  background-color: @background;
 }
 
 #clock.simpleclock {
-  color: #94e2d5;
-  background-color: #11111b;
+  color: @color15;
+  background-color: @background;
   /*#89b4fa;*/
 }
 
@@ -182,14 +183,14 @@ window#waybar.empty #window {
 }
 
 #pulseaudio {
-  color: #94e2d5;
-  /*#b4befe;*/
-  background-color: #11111b;
+  color: @color15;
+  /*#cba6f7;*/
+  background-color: @background;
 }
 
 #pulseaudio.muted {
   color: #ff474c;
-  background-color: #11111b;
+  background-color: @background;
   /*#a6adc8;*/
 }
 
@@ -206,8 +207,8 @@ window#waybar.empty #window {
 }
 */
 #battery {
-  color: #94e2d5;
-  background-color: #11111b;
+  color: @color15;
+  background-color: @background;
 }
 
 @keyframes blink {
