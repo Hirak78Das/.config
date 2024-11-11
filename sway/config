@@ -12,14 +12,9 @@ titlebar_padding 0
 
 #hide_edge_borders smart
 
-# add border for windows
+# add border for current window
 for_window [app_id=".*"] border pixel 1
 client.focused #3b4252 #88c0d0 #3b4252 #88c0d0
-
-# for full screenshot
-bindsym Print exec grim ~/Pictures/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png
-# To capture a specific area of the screen:
-bindsym Shift+Print exec grim -g "$(slurp)" ~/Pictures/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png
 
 #font
 font pango:Fira code 14
@@ -62,7 +57,14 @@ include /etc/sway/config-vars.d/*
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/backup-files/Wallpapers/alena-aenami-stardust-1k.jpg fill
+output * bg ~/Downloads/Game-GTA.png fill
+
+# for full screenshot
+bindsym $mod+Print exec grim ~/Pictures/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png
+# To capture a specific area of the screen:
+bindsym Shift+Print exec grim -g "$(slurp)" ~/Pictures/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png
+
+
 
 
 # Example configuration:
