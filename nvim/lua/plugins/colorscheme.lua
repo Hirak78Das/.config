@@ -1,7 +1,7 @@
 return {
   {
-    "rebelot/kanagawa.nvim",
+    "EdenEast/nightfox.nvim",
     lazy = true,
-    opts = { style = "" },
+    opts = { style = "Terafox" },
   },
 }

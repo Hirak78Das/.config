@@ -18,7 +18,7 @@ require("lazy").setup({
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
       opts = {
-        colorscheme = "kanagawa-dragon", -- light: kanagawa-lotus --> dark default: kanagawa-wave --> dark: kanagawa-dragon
+        colorscheme = "carbonfox", -- light theme: dayfox/dawnfox, duskfox, nordfox, terafox, carbonfox
         news = {
           lazyvim = true,
           neovim = true,
