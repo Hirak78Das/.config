@@ -18,7 +18,7 @@ require("lazy").setup({
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
       opts = {
-        colorscheme = "carbonfox", -- light theme: dayfox/dawnfox, duskfox, nordfox, terafox, carbonfox
+        colorscheme = "terafox", -- light theme: dayfox/dawnfox, duskfox, nordfox, terafox, carbonfox
         news = {
           lazyvim = true,
           neovim = true,
@@ -33,7 +33,7 @@ require("lazy").setup({
     -- { import = "lazyvim.plugins.extras.lang.markdown" },
     { import = "lazyvim.plugins.extras.lang.rust" },
     { import = "lazyvim.plugins.extras.lang.tailwind" },
-    { import = "lazyvim.plugins.extras.coding.copilot" },
+    --   { import = "lazyvim.plugins.extras.coding.copilot" },
     -- { import = "lazyvim.plugins.extras.dap.core" },
     -- { import = "lazyvim.plugins.extras.vscode" },
     { import = "lazyvim.plugins.extras.util.mini-hipatterns" },

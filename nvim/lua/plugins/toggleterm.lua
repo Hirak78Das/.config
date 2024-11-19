@@ -14,6 +14,9 @@ return {
       })
       -- Set keybinding to open terminal only in Normal mode
       vim.api.nvim_set_keymap("n", "<leader>t", ":ToggleTerm<CR>", { noremap = true, silent = true })
+
+      -- Map <Esc> to switch from Terminal mode to Normal mode
+      vim.api.nvim_set_keymap("t", "<Esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
     end,
   },
 }
