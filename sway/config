@@ -4,24 +4,27 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-# to remove the title bars from all windows
-default_border none
-
-titlebar_border_thickness 0                                                    
-titlebar_padding 0
-
-#hide_edge_borders smart
-
-# add border for current window
-for_window [app_id=".*"] border pixel 1
-client.focused #3b4252 #88c0d0 #3b4252 #88c0d0
-
-#font
-font pango:Fira code 14
 # waybar
 exec waybar
 
-#use pactl to adjust volume in pulse audio
+
+# to remove the title bars from all windows
+default_border none
+titlebar_padding 1
+titlebar_border_thickness 0
+font pango:JetBrainsMono Nerd Font 1
+
+# Urgent windows
+client.urgent #f7768e #f7768e #ffffff #f7768e #f7768e
+
+client.unfocused  #292e42 #292e42 #a9b1d6 #292e42 #292e42
+#hide_edge_borders smart
+
+# add border for current window
+for_window [app_id=".*"] border pixel 2
+client.focused #7aa2f7 #7aa2f7 #1a1b26 #7aa2f7 #7aa2f7
+   
+   #use pactl to adjust volume in pulse audio
     set $refresh_i3status kill all -SIGUSR1 i3status
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% 
@@ -34,9 +37,11 @@ exec waybar
     bindsym XF86MonBrightnessUp exec brightnessctl -d amdgpu_bl1 set +5%    # Increase brightness by 5%
     bindsym XF86MonBrightnessDown exec brightnessctl -d amdgpu_bl1 set 5%-  # Decrease brightness by 5%
 
+exec bluetoothctl power on
 
-### Variables
-#
+
+### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Variables ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vir
@@ -46,7 +51,7 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $term kitty
+set $term gnome-terminal
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -57,7 +62,7 @@ include /etc/sway/config-vars.d/*
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Downloads/Game-GTA.png fill
+output * bg ~/backup-files/Wallpapers/wallhaven-4.jpg fill
 
 # for full screenshot
 bindsym $mod+Print exec grim ~/Pictures/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png
@@ -108,10 +113,12 @@ bindsym Shift+Print exec grim -g "$(slurp)" ~/Pictures/screenshot-$(date +'%Y-%m
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    #bindsym $mod+d exec $menu
 
    # start rofi
-   bindsym $mod+space exec rofi -show drun
+
+bindsym $mod+space exec --no-startup-id ~/.config/rofi/launchers/type-7/launcher.sh
+bindsym $mod+x exec --no-startup-id powermenu_t2
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
